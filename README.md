@@ -1,84 +1,119 @@
-![logo](https://raw.github.com/apiaryio/api-blueprint/master/assets/logo_apiblueprint.png)
+![logo](assets/logo_apiblueprint.png)
 
 # API Blueprint
 ### API Design for Humans
-API Blueprint is a documentation-oriented API description language. A couple of semantical assumptions over the plain [Markdown](http://daringfireball.net/projects/markdown/).
 
-API Blueprint is perfect for designing your Web API and its comprehensive documentation but also for quick prototyping and collaboration. It is easy to learn and even easier to read – after all it is just a form of plain text.
+[![slack](https://apiblueprint-slack.herokuapp.com/badge.svg)](https://apiblueprint-slack.herokuapp.com/)
 
-API Blueprint, its parser, and most of its tools are completely open sourced so you don't have to worry about vendor lock-in. This also means you can freely integrate API Blueprint into any type of product, commercial or not.
+A powerful high-level API design language for web APIs.
 
-## TL;DR
-+ Web API description language
-+ Pure Markdown
-+ Designed for humans
-+ Understandable by machines
-+ Open & free
+API Blueprint is simple and accessible to everybody involved in the API design
+lifecycle. Its syntax is concise yet expressive.
 
-## Getting started with API Blueprint
-All it takes to describe that `message` endpoint of your API is to write:
+With API Blueprint you can quickly prototype and model APIs to be created or
+describe already deployed mission-critical APIs. From a [car][tesla] to the
+largest Content Distribution Network (CDN) in the world.
 
-```md
+The API Blueprint is built to encourage dialogue and collaboration between
+project stakeholders, developers and customers at any point in the API
+lifecycle. At the same time, the API Blueprint [tools][] provide the support to
+achieve the goals be it API development, governance or delivery.
+
+![API Blueprint Lifecycle](assets/lifecycle.png)
+
+[tesla]: https://github.com/timdorr/model-s-api/blob/master/apiary.apib
+[tools]: http://apiblueprint.org/tools.html
+
+## Open Source
+API Blueprint is completely open sourced under the MIT license.
+Any [contribution][contribute] is highly appreciated.
+
+[contribute]: #contribute
+
+## At home on GitHub
+API Blueprint language is recognized by GitHub. You can
+[search for API Blueprint][search] or use the `apib` language identifier for
+[syntax highlighting][gfm].
+
+[search]: https://github.com/search?utf8=%E2%9C%93&q=language%3A%22API+Blueprint%22&type=Repositories&ref=advsearch&l=API+Blueprint&l=
+
+[gfm]: https://help.github.com/articles/github-flavored-markdown/#syntax-highlighting
+
+## Getting started
+All it takes to describe an endpoint of your API is to write:
+
+```apib
 # GET /message
 + Response 200 (text/plain)
 
         Hello World!
 ```
 
-in your favorite Markdown editor. With this API description in your API GitHub repository you can discuss it with others and iterate on your API Design.
+in your favorite plain text editor.
 
-To learn more about the API Blueprint syntax jump directly to the [API Blueprint Tutorial](Tutorial.md) or take a look at some [examples](https://github.com/apiaryio/api-blueprint/tree/master/examples).
+With this blueprint you can already get a [mock][], [documentation][] and
+[test][] for your API before you even start coding.
 
-## Complete Lifecycle
-Describing your API is only the start. The API Blueprint can be used by variety of tools from an interactive documentation, SDK generator, debugging proxy and mock server to API testing and analytics tools.
+To learn more about the API Blueprint syntax jump directly to the
+[API Blueprint Tutorial][tutorial] or take a look at some [examples][].
 
-![API Blueprint Lifecycle](assets/lifecycle.png)
+[mock]: http://docs.apibstart.apiary.io/#reference/0/message/get?console=1
+[documentation]: http://docs.apibstart.apiary.io
+[test]: http://dredd.readthedocs.org/en/latest/
+[tutorial]: Tutorial.md
+[examples]: https://github.com/apiaryio/api-blueprint/tree/master/examples
 
-Visit the [tooling section](http://apiblueprint.org/#tooling) of the API Blueprint website to find more about the tools you can use with API Blueprint.
-
-
-## Machines
-Building tools for API Blueprint is possible thanks to its machine-friendly face:
-
-```json
-{
-    "_version": "2.0",
-    "metadata": [],
-    "name": "",
-    "description": "",
-
-    ...
-```
-\[[full listing](https://github.com/apiaryio/api-blueprint-ast#json-serialization)\]
-
-It is the task for the API Blueprint parser – [Snow Crash][] or one of its language bindings to translate the API Blueprint Markdown representation into a machine friendly format – AST.
-
-If you are interested in building tools for API Blueprint or just to integrate it with your workflow check out the [Developing tools for API Blueprint](https://github.com/apiaryio/api-blueprint/wiki/Developing-tools-for-API-Blueprint).
+## Media Type
+The media type for API Blueprint is `text/vnd.apiblueprint`.
 
 ## Learn more
-+ [Tutorial](Tutorial.md)
-+ [Examples](examples)
-+ [Glossary of Terms](Glossary%20of%20Terms.md)
-+ [API Blueprint Map](https://github.com/apiaryio/api-blueprint/wiki/API-Blueprint-Map)
-+ [Language Specification](API%20Blueprint%20Specification.md)
-+ [Tools working with API Blueprint](http://apiblueprint.org/#tooling)
+- [Tutorial][tutorial]
+- [Advanced Tutorial][advanced_tutorial]
+- [Examples][examples]
+- [Wiki][wiki]
+- [Glossary of Terms][glossary]
+- [Specification][specification]
+- [List of Tools][tools]
+- [Developers][developers]
 
-### Developers
-+ [API Blueprint reference parser – Snow Crash](https://github.com/apiaryio/snowcrash)
-+ [Snow Crash Bindings to other languages](https://github.com/apiaryio/snowcrash#bindings)
-+ [API Blueprint AST Serialization Media Types](https://github.com/apiaryio/api-blueprint-ast)
-+ [Developing tools for API Blueprint](https://github.com/apiaryio/api-blueprint/wiki/Developing-tools-for-API-Blueprint)
+[advanced_tutorial]: Advanced%20Tutorial.md
+[glossary]: Glossary%20of%20Terms.md
+[specification]: API%20Blueprint%20Specification.md
+[wiki]: https://github.com/apiaryio/api-blueprint/wiki
+[developers]: https://apiblueprint.org/developers.html
 
-## Future of API Blueprint
-Check out the API Blueprint [Issues Page](https://github.com/apiaryio/api-blueprint/issues) for planned features and issues discussion.
+## Future
+The plans for API Blueprint are completely tracked on GitHub – see the
+[API Blueprint Roadmap][roadmap].
+
+[roadmap]: https://github.com/apiaryio/api-blueprint/wiki/Roadmap
+
+## Developers
+Building tools for API Blueprint is possible thanks to its machine-friendly face
+provided by API Blueprint parser.
+
+If you are interested in building tools for API Blueprint check out the
+[Developing tools for API Blueprint][developers].
 
 ## Contribute
-Fork & pull request.
+Feel free report problems or propose new ideas using the API Blueprint GitHub
+[issues][].
 
-## Have a question?
-Ask at [Stack Overflow](http://stackoverflow.com/questions/tagged/apiblueprint), make sure to use the `apiblueprint` tag. Alternatively mention [@apiblueprint](https://twitter.com/apiblueprint) on Twitter.
+We use an RFC process for proposing any substantial changes to the API
+Blueprint language, specification and/or parsers.
+
+If you would like to propose a change, please consult our
+[RFC process][rfc].
+
+[issues]: https://github.com/apiaryio/api-blueprint/issues
+[rfc]: https://github.com/apiaryio/api-blueprint-rfcs
+
+## Get in Touch
+- [@apiblueprint](https://twitter.com/apiblueprint)
+- [Slack](https://apiblueprint-slack.herokuapp.com/)
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/apiblueprint)
+- [GitHub Issues][issues]
 
 ## License
-MIT License. See the [LICENSE](https://github.com/apiaryio/api-blueprint/blob/master/LICENSE) file.
-
-[Snow Crash]: https://github.com/apiaryio/snowcrash
+MIT License. See the [LICENSE](https://github.com/apiaryio/api-blueprint/blob/master/LICENSE)
+file.

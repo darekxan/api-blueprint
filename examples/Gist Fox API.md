@@ -17,14 +17,14 @@ The common [HTTP Response Status Codes](https://github.com/for-GET/know-your-htt
 # Gist Fox API Root [/]
 Gist Fox API entry point.
 
-This resource does not have any attributes. Instead it offers the initial API affordances in the form of the HTTP Link header and 
+This resource does not have any attributes. Instead it offers the initial API affordances in the form of the HTTP Link header and
 HAL links.
 
 ## Retrieve the Entry Point [GET]
 
 + Response 200 (application/hal+json)
     + Headers
-    
+
             Link: <http:/api.gistfox.com/>;rel="self",<http:/api.gistfox.com/gists>;rel="gists"
 
     + Body
@@ -42,18 +42,18 @@ Gist-related resources of *Gist Fox API*.
 ## Gist [/gists/{id}]
 A single Gist object. The Gist resource is the central resource in the Gist Fox API. It represents one paste - a single text note.
 
-The Gist resource has the following attributes: 
+The Gist resource has the following attributes:
 
-- id
-- created_at
-- description
-- content
++ id
++ created_at
++ description
++ content
 
-The states *id* and *created_at* are assigned by the Gist Fox API at the moment of creation. 
+The states *id* and *created_at* are assigned by the Gist Fox API at the moment of creation.
 
 
 + Parameters
-    + id (string) ... ID of the Gist in the form of a hash.
+    + id (string) - ID of the Gist in the form of a hash.
 
 + Model (application/hal+json)
 
@@ -68,7 +68,7 @@ The states *id* and *created_at* are assigned by the Gist Fox API at the moment 
             {
                 "_links": {
                     "self": { "href": "/gists/42" },
-                    "star": { "href": "/gists/42/star" },
+                    "star": { "href": "/gists/42/star" }
                 },
                 "id": "42",
                 "created_at": "2014-04-14T02:15:15Z",
@@ -78,7 +78,7 @@ The states *id* and *created_at* are assigned by the Gist Fox API at the moment 
 
 ### Retrieve a Single Gist [GET]
 + Response 200
-    
+
     [Gist][]
 
 ### Edit a Gist [PATCH]
@@ -91,7 +91,7 @@ To update a Gist send a JSON with updated value for one or more of the Gist reso
         }
 
 + Response 200
-    
+
     [Gist][]
 
 ### Delete a Gist [DELETE]
@@ -102,7 +102,7 @@ Collection of all Gists.
 
 The Gist Collection resource has the following attribute:
 
-- total
++ total
 
 In addition it **embeds** *Gist Resources* in the Gist Fox API.
 
@@ -138,14 +138,14 @@ In addition it **embeds** *Gist Resources* in the Gist Fox API.
 
 ### List All Gists [GET]
 + Parameters
-    + since (optional, string) ... Timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ` Only gists updated at or after this time are returned.
+    + since (string, optional) - Timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ` Only gists updated at or after this time are returned.
 
 + Response 200
 
     [Gists Collection][]
 
 ### Create a Gist [POST]
-To create a new Gist simply provide a JSON hash of the *description* and *content* attributes for the new Gist. 
+To create a new Gist simply provide a JSON hash of the *description* and *content* attributes for the new Gist.
 
 + Request (application/json)
 
@@ -159,16 +159,16 @@ To create a new Gist simply provide a JSON hash of the *description* and *conten
     [Gist][]
 
 ## Star [/gists/{id}/star]
-Star resource represents a Gist starred status. 
+Star resource represents a Gist starred status.
 
 The Star resource has the following attribute:
 
-- starred
++ starred
 
 
 + Parameters
 
-    + id (string) ... ID of the gist in the form of a hash
+    + id (string) - ID of the gist in the form of a hash
 
 + Model (application/hal+json)
 
@@ -182,7 +182,7 @@ The Star resource has the following attribute:
 
             {
                 "_links": {
-                    "self": { "href": "/gists/42/star" },
+                    "self": { "href": "/gists/42/star" }
                 },
                 "starred": true
             }

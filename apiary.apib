@@ -1471,7 +1471,8 @@ Subforums of given forum node.
                                 "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-thumb-837.jpg"
                             },
                             "message": "Po wstępnych oględzinach  działu zboża stwierdziłem ze jest masa podobnych tematów.",
-                            "signature": "Pozdrawiam"
+                            "signature": "Pozdrawiam",
+                            "canEdit": true
                         }
                     ],
                     "next": {
@@ -1540,7 +1541,6 @@ Topics for give gallery leaf
             }
             
 ### Create new Topic [POST]
-Not sure about attaching files...
 
 + Request (application/json)
 
@@ -1558,6 +1558,24 @@ Not sure about attaching files...
 
     [Topic][]
     
+    
+### Update a Topic [PUT]
++ Request (application/json)
+
+        {
+            "title": "Jęczmień ozimy i jary",
+            "post": {
+                "message": "Czy siejecie Jęczmień ozimy bo ja w tym roku posiałem jakie opryski proponujecie i ile można nakosić z ha ?",
+                "enableEmo": true,
+                "enableSig": true,
+                "subscribe": false
+            }
+        }
+        
++ Response 200 (application/json)
+
+    [Topic][]
+
 ## Subscribe Topic [/topics/{id}/subscribe]
 
 + Parameters
@@ -2020,7 +2038,7 @@ Unsupported properties:
                         "href": "https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary",
                         "title": "Jęczmień ozimy i jary",
                         "createdTime": "2011-09-02T16:12:33+0000",
-                        "message": "Po wstępnych oględzinach  działu zboża stwierdziłem ze jest masa podobnych tematów."
+                        "message": "Po wstępnych oględzinach  działu zboża stwierdziłem ze jest masa podobnych tematów."                    
                     }
                 ],
                 "next": {
@@ -2049,7 +2067,8 @@ Unsupported properties:
                             "href": "https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary",
                             "title": "Jęczmień ozimy i jary"
                         },
-                        "message": "Po wstępnych oględzinach  działu zboża stwierdziłem ze jest masa podobnych tematów."
+                        "message": "Po wstępnych oględzinach  działu zboża stwierdziłem ze jest masa podobnych tematów.",
+                        "canEdit": true
                     }
                 ],
                 "next": {
@@ -2191,7 +2210,7 @@ Unsupported/planned search types:
  - blogs
  - market
 
-## Search User [/search?type=user{&q}]
+## Search User [/search?type=user{q}]
 
 ### Search User Query [GET]
 
@@ -2764,7 +2783,7 @@ Not sure about moving... folder "href" as well as "name" might be both good iden
 
     [Conversation][]
     
-## Recipients Query [/recipients?{&q}]
+## Recipients Query [/recipients?{q}]
 + Parameters
     + q (string) ... search phrase
 

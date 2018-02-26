@@ -893,6 +893,27 @@ Single photo upload
                 "href": "https://api.agrofoto.pl/photos/514762-case-115-i-claas-dominator-86"
             }
 
+
+## Photo update [PUT /galleries/{gid}/photos/{pid}]
+Update name/description of the photo
+
++ Parameters
+    + gid (string)
+    + pid (string)
+
++ Request
+ 
+            {
+                "name": "Case 115 i Claas Dominator 86",
+                "desc": "1-szy dzień żniw.",
+                "subscribe": true
+            }
+   
+
++ Response 200 (application/json)
+        [Photo][]
+
+
 ## Hot photos collection [/galleries/{id}/hot]
 Hot photos collection for given gallery root/node/leaf
     

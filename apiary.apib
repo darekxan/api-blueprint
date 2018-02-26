@@ -1564,25 +1564,6 @@ Topics for give gallery leaf
 
     [Topic][]
     
-    
-### Update a Topic [PUT]
-+ Request (application/json)
-
-        {
-            "title": "Jęczmień ozimy i jary",
-            "tags": ["Jęczmień", "ozimy"],
-            "post": {
-                "message": "Czy siejecie Jęczmień ozimy bo ja w tym roku posiałem jakie opryski proponujecie i ile można nakosić z ha ?",
-                "enableEmo": true,
-                "enableSig": true,
-                "subscribe": false
-            }
-        }
-        
-+ Response 200 (application/json)
-
-    [Topic][]
-    
 
 ## Subscribe Topic [/topics/{id}/subscribe]
 
@@ -1607,6 +1588,31 @@ Topics for give gallery leaf
 + Response 200
 
     [Subscribe Topic][]
+
+
+## Update a Topic [PUT /forums/{fid}/topics/{tid}]
+
++ Parameters
+    + fid (string) ... Forum id
+    + tid (string) ... Topic id
+
++ Request (application/json)
+
+        {
+            "title": "Jęczmień ozimy i jary",
+            "tags": ["Jęczmień", "ozimy"],
+            "post": {
+                "message": "Czy siejecie Jęczmień ozimy bo ja w tym roku posiałem jakie opryski proponujecie i ile można nakosić z ha ?",
+                "enableEmo": true,
+                "enableSig": true,
+                "subscribe": false
+            }
+        }
+        
++ Response 200 (application/json)
+
+    [Topic][]
+
 
 ## Posts Collection [/topic/{id}/posts{?limit,page}]
 + Parameters

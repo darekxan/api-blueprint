@@ -893,28 +893,6 @@ Single photo upload
                 "href": "https://api.agrofoto.pl/photos/514762-case-115-i-claas-dominator-86"
             }
 
-
-## Photo update [PUT /galleries/{gid}/photos/{pid}]
-Update name/description of the photo
-
-+ Parameters
-    + gid (string)
-    + pid (string)
-
-+ Request
- 
-            {
-                "name": "Case 115 i Claas Dominator 86",
-                "desc": "1-szy dzień żniw.",
-                "tags": ["Jęczmień", "ozimy"],
-                "subscribe": true
-            }
-   
-
-+ Response 200 (application/json)
-        [Photo][]
-
-
 ## Hot photos collection [/galleries/{id}/hot]
 Hot photos collection for given gallery root/node/leaf
     
@@ -1094,14 +1072,34 @@ Single photo resource
                 "adRatio": 0.5
             }
 
-### Get the Photo [GET]
+### Get the Photo [GET /photos/{id}]
     
 + Response 200 (application/json)
 
     [Photo][]
 
-### Delete the photo [DELETE]
+### Delete the photo [DELETE /photos/{id}]
 + Response 204
+
+
+### Update the photo [PUT /photos/{id}]
+Update name/description/tags of the photo
+
++ Request
+ 
+            {
+                "name": "Case 115 i Claas Dominator 86",
+                "desc": "1-szy dzień żniw.",
+                "tags": ["Jęczmień", "ozimy"],
+                "subscribe": true
+            }
+   
+
++ Response 200 (application/json)
+        [Photo][]
+
+
+
 
 ## Photo rating [/photos/{id}/rate]
 Rate the photo

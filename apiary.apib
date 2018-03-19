@@ -1082,7 +1082,7 @@ Single photo resource
 + Response 204
 
 
-### Update the photo [PUT /photos/{id}]
+### Update the photo [POST /photos/{id}]
 Update name/description/tags of the photo
 
 + Request
@@ -1612,11 +1612,10 @@ Topics for give gallery leaf
     [Subscribe Topic][]
 
 
-## Update a Topic [PUT /forums/{fid}/topics/{tid}]
+## Update a Topic [POST /topics/{id}]
 
 + Parameters
-    + fid (string) ... Forum id
-    + tid (string) ... Topic id
+    + id (string) ... Topic id
 
 + Request (application/json)
 

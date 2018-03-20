@@ -2239,42 +2239,108 @@ Query relationship with the given user.
 
 # Group Search
 
-Supported search types:
+Supported search scopes:
 
- - user
- 
-Unsupported/planned search types:
-
- - topics/posts
- - events
- - galleries
+ - topics
+ - photos
  - blogs
- - market
+ 
 
-## Search User [/search?type=user{q}]
+## Search User [/search{?scope%5B%5D,query,tag,page,limit}]
+
+Note percent encoded square brackets, indicating that it's an array that is being passed as `scope` query param
 
 ### Search User Query [GET]
 
+
+
 + Parameters
-    + q (string) ... query string 
+    + query ... query to look for
+    + scope%5B%5D (string) ... one of `galleries`, `forums`, `news`
+    + tag (optional) ... true or false, true indicating that query is a tag and tag search should be performed
+    + page (optional)
+    + limit (optional)
+
     
 + Response 200 (application/json)
     + Body
     
             {
-                "href": "https://api.agrofoto.pl/search?type=user&q=piw",
+                "href": "https://api.agrofoto.pl/search?scope%5B%5D=galleries&scope%5B%5D=forums&scope%5B%5D=news&query=zetor&page=0&limit=25",
                 "items": [
                     {
-                        "href": "https://api.agrofoto.pl/users/18309-piwex16",
-                        "name": "piwex16",
+                        "type": "photo"
+                        "href": "https://api.agrofoto.pl/galleries/1/photos/18309",
                         "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg",
                         "createdTime": "2011-09-02T15:41:47+0000",
-                        "group": "V.I.P.",
-                        "posts": 182,
-                    }
+                        "updatedTime": "2011-09-02T16:12:33+0000",
+                        "displayedCount": 242,
+                        "commentsCount": 2,
+                        "user": {
+                            "href": "https://api.agrofoto.pl/users/18309-piwex16",
+                            "name": "piwex16",
+                            "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg"
+                        },
+                        "title": "<b>zetor</b> 1",
+                        "result": "...  no i właśnie tak wygląda zetor, w sumie ładny, taki zielony ..."
+                    },
+                    {
+                        "type": "photo_comment"
+                        "href": "https://api.agrofoto.pl/photos/18309/comments/12566",
+                        "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg",
+                        "createdTime": "2011-09-02T15:41:47+0000",
+                        "updatedTime": "2011-09-02T16:12:33+0000",
+                        "user": {
+                            "href": "https://api.agrofoto.pl/users/18309-piwex16",
+                            "name": "piwex16",
+                            "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg"
+                        },
+                        "title": "<b>zetor</b> 1",
+                        "result": "...  tak przechodząc obok niego, tego <b>zetora</b> ..."
+                    },
+                    {
+                        "type": "topic"
+                        "href": "https://api.agrofoto.pl/topics/18309",
+                        "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg",
+                        "createdTime": "2011-09-02T15:41:47+0000",
+                        "updatedTime": "2011-09-02T16:12:33+0000",
+                        "displayedCount": 242,
+                        "postsCount": 3068,
+                        "user": {
+                            "href": "https://api.agrofoto.pl/users/18309-piwex16",
+                            "name": "piwex16",
+                            "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg"
+                        },
+                        "title": "co z tym <b>zetor</b>em?",
+                        "result": "Coś nie działa, halp"
+                    },
+                    {
+                        "type": "topic_post"
+                        "href": "https://api.agrofoto.pl/topics/18309/posts/215566",
+                        "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg",
+                        "createdTime": "2011-09-02T15:41:47+0000",
+                        "updatedTime": "2011-09-02T16:12:33+0000",
+                        "user": {
+                            "href": "https://api.agrofoto.pl/users/18309-piwex16",
+                            "name": "piwex16",
+                            "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg"
+                        },
+                        "title": "co z tym traktorem?",
+                        "result": "... dodatkowo twierdzę, że warto było kupić zetora, który nie tylko ..."
+                    },
+                    {
+                        "type": "news"
+                        "href": "https://api.agrofoto.pl/news/1",
+                        "thumb": "http://www.agrofoto.pl/forum/uploads/profile/photo-18309.jpg",
+                        "createdTime": "2011-09-02T15:41:47+0000",
+                        "updatedTime": "2011-09-02T16:12:33+0000",
+                        "displayedCount": 242,
+                        "title": "<b>Zetor</b> nowości 2018",
+                        "result": "... w Płońsku <b>Zetor</b> zaprezentował ..."
+                    },
                 ],
                 "next": {
-                    "href": "https://api.agrofoto.pl/search?type=user&q=piw&page=1&limit=25"
+                    "href": "https://api.agrofoto.pl/search?scope%5B%5D=galleries&scope%5B%5D=forums&scope%5B%5D=news&query=zetor&page=1&limit=25"
                 },
                 "previous": null
             }

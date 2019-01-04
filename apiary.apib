@@ -275,6 +275,7 @@ Performs logout.
                 },
                 "bannerads": [    
                     {
+                        "id": "45144f6a-1001-11e9-ab14-d663bd873d93",
                         "banner": "http://link-do-baneru.com/baner.jpg",
                         "link": "http://link-do-reklamowanej-strony.com"
                     }
@@ -3250,6 +3251,21 @@ Taka sama odpowiedź jak dla Blog Entries z na sztywno ustowionym id bloga aktua
             
 # Group Advertisment
 
+## AdEvents [/adevents/{id}]
+### Log AdEvent [POST]
+
++ Parameters
+    + id (string)
+    
++ Request (application/json)
+    
+        {
+            "eventType":"displayed|clicked",
+            "eventTime":"1546592160"
+        }
+        
++ Response 201
+
 ## LoadingAd [/loadingad]
 
 ### Get app startup banner [GET]
@@ -3258,6 +3274,7 @@ Taka sama odpowiedź jak dla Blog Entries z na sztywno ustowionym id bloga aktua
     + Body
     
             {
+                "id": "45144f6a-1001-11e9-ab14-d663bd873d93",
                 "banner": "http://link-do-baneru.com/baner.jpg",
                 "link": "http://link-do-reklamowanej-strony.com"
             }
@@ -3271,6 +3288,7 @@ Taka sama odpowiedź jak dla Blog Entries z na sztywno ustowionym id bloga aktua
     + Body
     
             {
+                "id": "45144f6a-1001-11e9-ab14-d663bd873d93",
                 "banner": "http://link-do-baneru.com/baner.jpg",
                 "link": "http://link-do-reklamowanej-strony.com"
             }
@@ -3284,6 +3302,7 @@ Taka sama odpowiedź jak dla Blog Entries z na sztywno ustowionym id bloga aktua
 
             [    
                 {
+                    "id": "45144f6a-1001-11e9-ab14-d663bd873d93",
                     "banner": "http://link-do-baneru.com/baner.jpg",
                     "link": "http://link-do-reklamowanej-strony.com"
                 }

@@ -3269,6 +3269,9 @@ Taka sama odpowiedź jak dla Blog Entries z na sztywno ustowionym id bloga aktua
 ## LoadingAd [/loadingad]
 
 ### Get app startup banner [GET]
+`autohide` default `true`, should ad be automatically dismissed? if `false`, no cross is shown and user has to explicitely 'close' the ad
+
+`timeout` default 3, hide ad in in `timeout` seconds
 + Response 200 (application/json)
 
     + Body
@@ -3276,7 +3279,9 @@ Taka sama odpowiedź jak dla Blog Entries z na sztywno ustowionym id bloga aktua
             {
                 "id": "45144f6a-1001-11e9-ab14-d663bd873d93",
                 "banner": "http://link-do-baneru.com/baner.jpg",
-                "link": "http://link-do-reklamowanej-strony.com"
+                "link": "http://link-do-reklamowanej-strony.com",
+                "autoHide": true,
+                "timeout": 5
             }
 
 

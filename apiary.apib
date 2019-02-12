@@ -323,6 +323,130 @@ Latest comments collection with paging support (page and limit query parameters)
                 "prevoius": null
             }
 
+
+# Group Feeed
+
+## Feed [/feed?cursor=23r9imlsfdnl]
+
+### Get feed [GET]
++ Response 200 (application/json)
+    + Body
+            
+            {
+              "items":[
+                {
+                  "photo":{
+                    "href":"https://api.agrofoto.pl/photos/514762-case-115-i-claas-dominator-86",
+                    "user":{
+                      "href":"https://api.agrofoto.pl/users/14237-mat",
+                      "name":"Mat"
+                    },
+                    "name":"Case 115 i Claas Dominator 86",
+                    "desc":"1-szy dzień żniw.",
+                    "images":{
+                      "square":"http://www.agrofoto.pl/forum/uploads/gallery/category_29/tn_gallery_14237_29_53604.jpg",
+                      "small":"http://www.agrofoto.pl/forum/uploads/gallery/category_29/sml_gallery_14237_29_53604.jpg",
+                      "medium":"http://www.agrofoto.pl/forum/uploads/gallery/category_29/med_gallery_14237_29_53604.jpg",
+                      "large":"http://www.agrofoto.pl/forum/uploads/gallery/category_29/gallery_14237_29_53604.jpg"
+                    },
+                    "createdTime":"2011-09-02T15:41:47+0000",
+                    "updatedTime":"2011-09-02T16:12:33+0000",
+                    "displayedCount":91,
+                    "adRatio": 0.5,
+                    "commentsCount":44,
+                    "comments":{
+                      "href":"https://api.agrofoto.pl/photos/514762-case-115-i-claas-dominator-86/comments",
+                      "items":[
+                        {
+                          "href":"https://api.agrofoto.pl/comments/1544809",
+                          "user":{
+                            "href":"https://api.agrofoto.pl/users/19727-michal15555",
+                            "name":"michal15555",
+                            "thumb":"http://www.agrofoto.pl/forum/uploads/profile/photo-thumb-19727.jpg"
+                          },
+                          "message":"Jaki plon ?",
+                          "createdTime":"2011-09-02T15:41:47+0000"
+                        },
+                        {
+                          "href":"https://api.agrofoto.pl/comments/1544810",
+                          "user":{
+                            "href":"https://api.agrofoto.pl/users/19727-micha55",
+                            "name":"micha55",
+                            "thumb":"http://www.agrofoto.pl/forum/uploads/profile/photo-thumb-19727.jpg"
+                          },
+                          "message":"duży duży ?",
+                          "createdTime":"2011-09-02T15:41:47+0000"
+                        }
+                      ],
+                      "next":null,
+                      "previous":{
+                        "href":"https://api.agrofoto.pl/photos/514762-case-115-i-claas-dominator-86/comments?page=1&limit=25"
+                      }
+                    }
+                  }
+                },
+                {
+                  "ad":{
+                    "id":"45144f6a-1001-11e9-ab14-d663bd873d93",
+                    "banner":"http://link-do-baneru.com/baner.jpg",
+                    "link":"http://link-do-reklamowanej-strony.com"
+                  }
+                },
+                {
+                  "topic":{
+                    "href":"https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary",
+                    "title":"Jęczmień ozimy i jary",
+                    "user":{
+                      "href":"https://api.agrofoto.pl/users/837-miki7211",
+                      "name":"Miki7211",
+                      "thumb":"http://www.agrofoto.pl/forum/uploads/profile/photo-thumb-837.jpg"
+                    },
+                    "createdTime":"2011-09-02T16:12:33+0000",
+                    "postsCount":3068,
+                    "displayedCount":371883,
+                    "unread":true,
+                    "firstUnread":344,
+                    "pinned":true,
+                    "hot":true,
+                    "link":"http://www.agrofoto.pl/forum/topic/5005-jeczmien-ozimy-i-jary/",
+                    "posts":{
+                      "href":"https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary/posts",
+                      "items":[
+                        {
+                          "href":"https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary/posts/1",
+                          "entry":"#1",
+                          "createdTime":"2011-09-02T16:12:33+0000",
+                          "user":{
+                            "href":"https://api.agrofoto.pl/users/837-miki7211",
+                            "name":"Miki7211",
+                            "thumb":"http://www.agrofoto.pl/forum/uploads/profile/photo-thumb-837.jpg"
+                          },
+                          "message":"Po wstępnych oględzinach  działu zboża stwierdziłem ze jest masa podobnych tematów.",
+                          "signature":"Pozdrawiam",
+                          "canEdit":true
+                        }
+                      ],
+                      "next":{
+                        "href":"https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary/posts?page=1&limit=25"
+                      },
+                      "previous":null,
+                      "last":{
+                        "href":"https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary/posts?page=117&limit=25"
+                      }
+                    },
+                    "subscribe":{
+                      "href":"https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary/subscribe",
+                      "count":31,
+                      "subscribed":true
+                    }
+                  }
+                }
+              ],
+              "cursor":"23r9imlsfdnl"
+            }
+
+            
+
 # Group Galleries
 Gallery releated resources
 

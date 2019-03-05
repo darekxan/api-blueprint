@@ -366,6 +366,13 @@ Retruns an array of `items` with customised content. Any element in array could 
                     "updatedTime":"2011-09-02T16:12:33+0000",
                     "displayedCount":91,
                     "adRatio": 0.5,
+                    "reactions": {
+                        "own": : "like",
+                        "like" : 10,
+                        "thanks": 1,
+                        "sad": 22,
+                        "haha": 85
+                    },
                     "commentsCount":44,
                     "comments":{
                       "href":"https://api.agrofoto.pl/photos/514762-case-115-i-claas-dominator-86/comments",
@@ -417,6 +424,13 @@ Retruns an array of `items` with customised content. Any element in array could 
                     "createdTime":"2011-09-02T16:12:33+0000",
                     "postsCount":3068,
                     "displayedCount":371883,
+                    "reactions": {
+                        "own": : "like",
+                        "like" : 10,
+                        "thanks": 1,
+                        "sad": 22,
+                        "haha": 85
+                    },
                     "unread":true,
                     "firstUnread":344,
                     "pinned":true,
@@ -1299,6 +1313,46 @@ Rate or update user vote
 
     [Photo subscribing][]
 
+## Photo reactions [/photos/{id}/reactions]
+
++ Parameters
+    + id (string)
+
++ Model
+    + Body
+    
+            {
+                "href": "https://api.agrofoto.pl/photos/5005-jeczmien-ozimy-i-jary/reactions",
+                "reactions": {
+                    "own": : "like",
+                    "like" : 10,
+                    "thanks": 1,
+                    "sad": 22,
+                    "haha": 85
+                }
+            }
+
+### Add/change reaction for a photo [PUT]
++ Request (application/json)
+
+            {
+                "own": "like"
+            }
+            
++ Response 200 (application/json)
+
+    [Photo reactions][]
++ Response 200 (application/json)
+
+    [Photo reactions][]
+
+### Delete a reaction for photo [DELETE]
++ Response 200
+
+    [Photo reactions][]
+
+
+
 # Group Comments
 
 ## Comments collection [/photos/{id}/comments?{limit,page}]
@@ -1725,6 +1779,29 @@ Topics for give gallery leaf
     [Topic][]
     
 
+## Update a Topic [POST /topics/{id}]
+
++ Parameters
+    + id (string) ... Topic id
+
++ Request (application/json)
+
+        {
+            "title": "Jęczmień ozimy i jary",
+            "tags": ["Jęczmień", "ozimy"],
+            "post": {
+                "message": "Czy siejecie Jęczmień ozimy bo ja w tym roku posiałem jakie opryski proponujecie i ile można nakosić z ha ?",
+                "enableEmo": true,
+                "enableSig": true,
+                "subscribe": false
+            }
+        }
+        
++ Response 200 (application/json)
+
+    [Topic][]
+
+
 ## Subscribe Topic [/topics/{id}/subscribe]
 
 + Parameters
@@ -1749,28 +1826,43 @@ Topics for give gallery leaf
 
     [Subscribe Topic][]
 
-
-## Update a Topic [POST /topics/{id}]
+## Topic reactions [/topics/{id}/reactions]
 
 + Parameters
-    + id (string) ... Topic id
+    + id (string)
 
++ Model
+    + Body
+    
+            {
+                "href": "https://api.agrofoto.pl/topics/5005-jeczmien-ozimy-i-jary/reactions",
+                "reactions": {
+                    "own": : "like",
+                    "like" : 10,
+                    "thanks": 1,
+                    "sad": 22,
+                    "haha": 85
+                }
+            }
+
+### Add/change reaction for a topic [PUT]
 + Request (application/json)
 
-        {
-            "title": "Jęczmień ozimy i jary",
-            "tags": ["Jęczmień", "ozimy"],
-            "post": {
-                "message": "Czy siejecie Jęczmień ozimy bo ja w tym roku posiałem jakie opryski proponujecie i ile można nakosić z ha ?",
-                "enableEmo": true,
-                "enableSig": true,
-                "subscribe": false
+            {
+                "own": "like"
             }
-        }
-        
+            
 + Response 200 (application/json)
 
-    [Topic][]
+    [Topic reactions][]
++ Response 200 (application/json)
+
+    [Topic reactions][]
+pi
+### Delete a reaction for Topic [DELETE]
++ Response 200
+
+    [Topic reactions][]
 
 
 ## Posts Collection [/topic/{id}/posts{?limit,page}]

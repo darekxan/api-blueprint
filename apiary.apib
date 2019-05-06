@@ -352,7 +352,7 @@ Latest comments collection with paging support (page and limit query parameters)
 Main feed resource. Returns max 25 resources. Allows for paging using a cursor scheme. Send a followup request to the same endpoint, providing the cursor value returned in the previous response as a query parameter, to fetch the next set of results. Repeat this process until you receive a response without a cursor.
 
 
-## Feed [/feed?cursor={cursor}]
+## Feed [/feed?cursor={cursor}?category={category}]
 Retruns an array of `items` with customised content. Any element in array could be an:
 
 - `ad` - similar to `/bannerad` resource
@@ -361,7 +361,7 @@ Retruns an array of `items` with customised content. Any element in array could 
 
 + Parameters
     + cursor (string) - A pagination cursor for retrieving the next set of results, if any remain. Client will provide this value as the cursor parameter in a subsequent request to this endpoint.
-
+    + category (string) - retrievies feed of particular category, one of my|forums|galleries
 
 ### Get feed [GET]
 
